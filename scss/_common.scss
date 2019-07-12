@@ -1,0 +1,22 @@
+@import '../css/normalize.css';
+
+$table-border : 1px solid #ddd;
+
+@mixin trs-ease{
+	transition: all 0.2s ease-in-out;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'imagine_fontregular', sans-serif;
+}
+
+a{
+	text-decoration: none;
+	color: #fff;
+}
+
+address{
+	font-style: normal;
+}

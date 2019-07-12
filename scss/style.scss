@@ -1,0 +1,81 @@
+@import 'common';
+
+$main-color : #0d0d0d;
+$main-font : 'imagine_fontregular';
+
+.l-main{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	margin: 5vh auto;
+	&>*{
+		display: none;
+		width: 90vh;
+		height: 90vh;
+		max-width: 900px;
+		max-height: 900px;
+	}
+	.l-menu{
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		align-content: center;
+	}
+}
+
+body{
+	background: $main-color;
+	color: #fff;
+	font-size: 5rem;
+}
+
+.contents{
+	&>*{
+		border: 1px solid #fff;
+	}
+	.main_menu{
+		background: #000;
+		text-align: center;
+		&>*{
+			user-select: none;
+		}
+		h1{
+			margin: 20vh 0;
+		}
+		a{
+			line-height: 5rem;
+			vertical-align: middle;
+			&::before{
+				content: '▶';
+				@extend %menu_hover;
+			}
+			&::after{
+				content: '◀';
+				@extend %menu_hover;
+			}
+			&:hover{
+				&::before, &::after{opacity: 1;}
+			}
+		}
+	}
+	canvas{
+		cursor:none;
+	}
+}
+
+%menu_hover{
+	transition: opacity 0.3s ease;
+	font-size: 2rem;
+	line-height: 2rem;
+	vertical-align: middle;
+	margin: 50px;
+	opacity: 0;
+}
+
+.is-visible{
+	display: block;
+}
+
+.is-disable{
+	display: none !important;
+}
